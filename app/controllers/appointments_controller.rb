@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+
+
   def index
    appointments = Appointment.all
 
@@ -9,6 +11,11 @@ class AppointmentsController < ApplicationController
    if end_time = params[:end_time]
      appointments = appointments.where(end_time: end_time)
    end
+
+   if first_name = params[:first_name]
+     appointments = appointments.where(first_name: first_name)
+   end
+
    render json: appointments, status: 200
   end
 
