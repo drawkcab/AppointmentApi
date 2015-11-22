@@ -1,4 +1,7 @@
-namespace :appointment_csv do
+# created from http://stackoverflow.com/questions/12461260/how-can-i-import-a-csv-file-via-a-rake-task
+# rake import_appointment_csv:create_appointments
+
+namespace :import_appointment_csv do
   task :create_appointments => :environment do
     require 'csv'
 
