@@ -1,3 +1,6 @@
+# test list of everything
+# need filter tests
+
 require 'test_helper'
 
 class ListingAppointmentsTest < ActionDispatch::IntegrationTest
