@@ -1,7 +1,7 @@
-== README
+== Appointment API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This API is to be used to interact with other web apps that need to access the
+appointments of the users.
 
 Things you may want to cover:
 
