@@ -1,5 +1,3 @@
-# test the update feature
-
 class UpdatingAppointmentsTest < ActionDispatch::IntegrationTest
   setup { @appointment = Appointment.create!(first_name: 'Matthew',last_name: 'Roche', start_time: '2015-12-25T15:31:00.000Z', end_time: '2015-12-25T16:01:00.000Z' ) }
 
