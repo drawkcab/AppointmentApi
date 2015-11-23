@@ -95,4 +95,31 @@ class CreateAppointmentsTest < ActionDispatch::IntegrationTest
     assert_equal 422, response.status
   end
 
+  test 'overlap end time test' do
+    post '/appointments',
+    { appointment:
+      { first_name: 'Matthew', last_name: 'Roche', start_time: '0011-01-13T06:00:00.000Z', end_time: '0011-01-13T07:04:00.000Z' }
+    }.to_json,
+    { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
+    assert_equal 422, response.status
+  end
+
+  test 'overlap start time test' do
+    post '/appointments',
+    { appointment:
+      { first_name: 'Matthew', last_name: 'Roche', start_time: '0011-01-13T07:04:00.000Z', end_time: '0011-01-13T07:20:00.000Z' }
+    }.to_json,
+    { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
+    assert_equal 422, response.status
+  end
+
+  test 'overlap exact time test' do
+    post '/appointments',
+    { appointment:
+      { first_name: 'Matthew', last_name: 'Roche', start_time: '0011-01-13T07:00:00.000Z', end_time: '0011-01-13T07:05:00.000Z' }
+    }.to_json,
+    { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
+    assert_equal 422, response.status
+  end
+
 end
