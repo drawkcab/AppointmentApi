@@ -4,7 +4,7 @@ class Appointment < ActiveRecord::Base
   def check
     if self.start_time.nil? || self.end_time.nil? || self.first_name.nil? || self.last_name.nil?
       return false
-    elsif self.start_time.future? && self.end_time.future?
+    elsif self.start_time.future? && self.end_time.future? && self.start_time < self.end_time
       return true
     else
       return false
