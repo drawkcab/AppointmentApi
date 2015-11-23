@@ -24,7 +24,7 @@ class CreateAppointmentsTest < ActionDispatch::IntegrationTest
   test 'must have end time' do
     post '/appointments',
     { appointment:
-      { first_name: 'Matthew', last_name: 'Roche', start_time: '2212-12-17T21:00:00.000Z', end_time: '2212-12-17T22:00:00.000Z' }
+      { first_name: 'Matthew', last_name: 'Roche', start_time: '2212-12-17T21:00:00.000Z', end_time: nil }
     }.to_json,
     { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s }
     assert_equal 422, response.status
