@@ -1,10 +1,7 @@
-# test list of everything
-# need filter tests
 
 require 'test_helper'
 
 class ListingAppointmentsTest < ActionDispatch::IntegrationTest
-  # setup code here
   setup { host! 'example.com'}
 
   test 'returns a list of appointments' do

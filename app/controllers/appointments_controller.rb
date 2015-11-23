@@ -20,6 +20,12 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    appointment = Appointment.new(appointment_params)
+    if appointment.save
+      render json: appointment, status: :created, location: appointment
+    else
+      ￼  render json: appointment.errors, status: 422
+    end
   end
 
   def update
