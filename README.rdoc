@@ -1,28 +1,33 @@
 == Appointment API
 
-This API is to be used to interact with other web apps that need to access the
-appointments of the users.
+This API is to be used to interact with other web apps that need to get access to
+appointments of the users. All appointments must have a first and last name along
+with a start and finish time. Appointments are not allowed to overlap.
 
-Things you may want to cover:
+Chosen Technology
 
-* Ruby version
+-Rails was chosen in order provide integration testing and a RESTful web API framework.
 
-* System dependencies
+-All CRUD operations were developed into the application.
 
-* Configuration
+Testing
 
-* Database creation
+-Integration testing was implemented to ensure a fully functional API. Also the
+API was developed with TDD.
 
-* Database initialization
+Hosting
 
-* How to run the test suite
+-Heroku was chosen to host the API. Heroku requires Postgres server in order to
+run. Heroku also has fast rails implementation.
 
-* Services (job queues, cache servers, search engines, etc.)
+-(http://ancient-wave-4253.herokuapp.com/)
 
-* Deployment instructions
+Functionality
 
-* ...
+-Create
 
+-Read
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+-Update
+
+-Destroy

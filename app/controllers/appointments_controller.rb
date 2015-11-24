@@ -12,10 +12,6 @@ class AppointmentsController < ApplicationController
      appointments = appointments.where(end_time: end_time)
    end
 
-   if first_name = params[:first_name]
-     appointments = appointments.where(first_name: first_name)
-   end
-
    render json: appointments, status: 200
   end
 
