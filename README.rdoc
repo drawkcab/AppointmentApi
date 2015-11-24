@@ -20,14 +20,21 @@ Hosting
 -Heroku was chosen to host the API. Heroku requires Postgres server in order to
 run. Heroku also has fast rails implementation.
 
--(http://ancient-wave-4253.herokuapp.com/)
+-http://ancient-wave-4253.herokuapp.com/
 
 Functionality
 
--Create
+-Create:
+  -Creates with the specific rules not to overlap appointments, only allow
+  appointments in the future.
 
--Read
+-Read:
+  -root will provide a full list of appointments in JSON format
+  -allows filtering based on start_time or end_time only using. ex: /?end_time=
 
 -Update
+  -Appointments can be updated based on appointment ID
+  -ex: use /appointmentID  { appointment: { first_name: 'New Name' } }
 
 -Destroy
+  -Deleting can be done form /appointmentID
